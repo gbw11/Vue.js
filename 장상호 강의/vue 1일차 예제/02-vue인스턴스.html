@@ -9,24 +9,28 @@
 
 <body>
   <div id="app">
-    <button >버튼</button>
-    <p></p>
+    <h1>{{message}}</h1>
+    <h1>{{message.split("").reverse().join("")}}</h1>
   </div>
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
-    const { createApp, ref } = Vue
+    const {createApp, ref} = Vue    
 
     const app = createApp({
-      setup() {
-        return {
+      setup(){
+        const message = ref('Hello vue!!!')
 
+        return{
+          message,
         }
       }
     })
 
     app.mount('#app')
   </script>
+
+
 </body>
 
 </html>
